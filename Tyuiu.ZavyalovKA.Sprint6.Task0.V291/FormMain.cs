@@ -21,7 +21,7 @@ using Tyuiu.ZavyalovKA.Sprint6.Task0.V29.Lib;
         DataService ds = new DataService();
         try
         {
-            textBoxResult.Text = Convert.ToString(ds.Calculate(Convert.ToInt32(textBoxVarA.Text);
+            textBoxResult.Text = Convert.ToString(ds.Calculate(Convert.ToInt32(textBoxVarA.Text); 
         catch
         {
             MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
