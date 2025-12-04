@@ -40,7 +40,7 @@ using Tyuiu.ZavyalovKA.Sprint6.Task0.V29.Lib;
     {
         MessageBox.Show("Таск 0 выполнил студент группы РППб-25-1 Завьялов Константин Андреевич");
     }
-}
+ }
 }
 
 
