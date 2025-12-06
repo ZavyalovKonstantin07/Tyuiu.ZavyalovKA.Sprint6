@@ -11,6 +11,7 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task6.V20.Lib
             {
                 string line;
                 bool firstWord = true;
+
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] words = line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
@@ -18,7 +19,7 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task6.V20.Lib
                     {
                         if (!firstWord)
                         {
-                            resultBuilder.Append("\\n");
+                            resultBuilder.Append(" "); 
                         }
                         resultBuilder.Append(words[1]);
                         firstWord = false;
