@@ -7,20 +7,21 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task6.V20.Lib
         public string CollectTextFromFile(string path)
         {
             StringBuilder resultBuilder = new StringBuilder();
-
-            using (StreamReader reader = new StreamReader(path))
+            using (StreamReader reader = new StreamReader(path, Encoding.UTF8))
             {
                 string line;
+                bool firstWord = true;
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] words = line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
                     if (words.Length >= 2)
                     {
-                        if (resultBuilder.Length > 0)
+                        if (!firstWord)
                         {
-                            resultBuilder.AppendLine(); 
+                            resultBuilder.Append("\\n");
                         }
                         resultBuilder.Append(words[1]);
+                        firstWord = false;
                     }
                 }
             }
