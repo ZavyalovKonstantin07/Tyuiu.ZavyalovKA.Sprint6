@@ -7,26 +7,28 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task7.V1.Lib
         {
             string[] lines = File.ReadAllLines(path);
             int rows = lines.Length;
-            int columns = lines[0].Split(' ', StringSplitOptions.RemoveEmptyEntries).Length;
+            int columns = lines[0].Split(';', StringSplitOptions.RemoveEmptyEntries).Length;
             int[,] matrix = new int[rows, columns];
             for (int i = 0; i < rows; i++)
             {
-                string[] numbers = lines[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                string[] numbers = lines[i].Split(';', StringSplitOptions.RemoveEmptyEntries);
+
                 for (int j = 0; j < columns; j++)
                 {
-                    int value = int.Parse(numbers[j]);
-                    if (j == 2 && value < 0)
-                    {
-                        matrix[i, j] = 1;
-                    }
-                    else
-                    {
-                        matrix[i, j] = value;
-                    }
+                    matrix[i, j] = int.Parse(numbers[j]);
+                }
+            }
+            int targetColumn = 1; 
+
+            for (int r = 0; r < rows; r++)
+            {
+                if (matrix[r, targetColumn] < 0)
+                {
+                    matrix[r, targetColumn] = 1;
                 }
             }
             return matrix;
-         }
+        }
     }
 }
 
