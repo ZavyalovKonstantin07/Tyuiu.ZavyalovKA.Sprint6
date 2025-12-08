@@ -15,7 +15,7 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task7.V1.Lib
                 for (int j = 0; j < columns; j++)
                 {
                     int value = int.Parse(numbers[j]);
-                    if (j == 1 && value < 0)
+                    if (j == 2 && value < 0)
                     {
                         matrix[i, j] = 1;
                     }
