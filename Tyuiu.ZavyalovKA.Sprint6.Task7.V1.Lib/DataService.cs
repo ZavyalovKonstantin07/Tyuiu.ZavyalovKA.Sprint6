@@ -18,13 +18,13 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task7.V1.Lib
                     matrix[i, j] = int.Parse(numbers[j]);
                 }
             }
-            int targetColumn = 1; 
+            int XColumn = 1; 
 
             for (int r = 0; r < rows; r++)
             {
-                if (matrix[r, targetColumn] < 0)
+                if (matrix[r, XColumn] < 0)
                 {
-                    matrix[r, targetColumn] = 1;
+                    matrix[r, XColumn] = 1;
                 }
             }
             return matrix;
