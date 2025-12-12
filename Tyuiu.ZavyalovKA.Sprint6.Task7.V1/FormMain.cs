@@ -46,7 +46,7 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task7.V1
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void buttonOpenFile_Click(object sender, EventArgs e)
