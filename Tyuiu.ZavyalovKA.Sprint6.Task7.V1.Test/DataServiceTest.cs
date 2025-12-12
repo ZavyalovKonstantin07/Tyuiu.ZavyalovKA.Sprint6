@@ -5,7 +5,7 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task7.V1.Test
     public sealed class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethod()
         {
             string path = @"C:\Users\Завьялов Константин\source\repos\Tyuiu.ZavyalovKA.Sprint6\Tyuiu.ZavyalovKA.Sprint6.Task7.V1\bin\Debug\net8.0-windows\InPutDataFileTask7V1.csv";
             FileInfo fileInfo = new FileInfo(path);
