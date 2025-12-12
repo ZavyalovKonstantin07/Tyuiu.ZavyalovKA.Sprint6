@@ -20,7 +20,7 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task7.V1
         static string openFilePath;
 
         DataService ds = new DataService();
-
+        
         public static int[,] LoadFromFileData(string filePath)
         {
             string fileData = File.ReadAllText(filePath);
