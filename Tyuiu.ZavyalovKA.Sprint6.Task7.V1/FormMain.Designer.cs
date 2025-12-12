@@ -39,20 +39,20 @@
             buttonDone = new Button();
             buttonOpenFile = new Button();
             panel2 = new Panel();
+            dataGridViewInMatrix = new DataGridView();
             textBox2 = new TextBox();
             splitter1 = new Splitter();
             panel3 = new Panel();
+            dataGridViewOutMatrix = new DataGridView();
             textBox3 = new TextBox();
             toolTip1 = new ToolTip(components);
             openFileDialogTask = new OpenFileDialog();
             saveFileDialogMatrix = new SaveFileDialog();
-            dataGridViewInMatrix = new DataGridView();
-            dataGridViewOutMatrix = new DataGridView();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewInMatrix).BeginInit();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOutMatrix).BeginInit();
             SuspendLayout();
             // 
@@ -118,11 +118,11 @@
             // buttonSave
             // 
             buttonSave.FlatStyle = FlatStyle.Flat;
+            buttonSave.Image = (Image)resources.GetObject("buttonSave.Image");
             buttonSave.Location = new Point(353, 12);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(122, 83);
             buttonSave.TabIndex = 2;
-            buttonSave.Text = "Сохранить";
             toolTip1.SetToolTip(buttonSave, "Сохранить");
             buttonSave.UseVisualStyleBackColor = true;
             buttonSave.Click += buttonSave_Click;
@@ -130,11 +130,11 @@
             // buttonDone
             // 
             buttonDone.FlatStyle = FlatStyle.Flat;
+            buttonDone.Image = (Image)resources.GetObject("buttonDone.Image");
             buttonDone.Location = new Point(189, 12);
             buttonDone.Name = "buttonDone";
             buttonDone.Size = new Size(122, 83);
             buttonDone.TabIndex = 1;
-            buttonDone.Text = "Выполнить";
             toolTip1.SetToolTip(buttonDone, "Выполнить");
             buttonDone.UseVisualStyleBackColor = true;
             buttonDone.Click += buttonDone_Click;
@@ -142,11 +142,12 @@
             // buttonOpenFile
             // 
             buttonOpenFile.FlatStyle = FlatStyle.Flat;
-            buttonOpenFile.Location = new Point(30, 12);
+            buttonOpenFile.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonOpenFile.Image = (Image)resources.GetObject("buttonOpenFile.Image");
+            buttonOpenFile.Location = new Point(12, 12);
             buttonOpenFile.Name = "buttonOpenFile";
-            buttonOpenFile.Size = new Size(122, 83);
+            buttonOpenFile.Size = new Size(124, 83);
             buttonOpenFile.TabIndex = 0;
-            buttonOpenFile.Text = "Открыть файл";
             toolTip1.SetToolTip(buttonOpenFile, "Открыть файл");
             buttonOpenFile.UseVisualStyleBackColor = true;
             buttonOpenFile.Click += buttonOpenFile_Click;
@@ -161,6 +162,14 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(663, 366);
             panel2.TabIndex = 1;
+            // 
+            // dataGridViewInMatrix
+            // 
+            dataGridViewInMatrix.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewInMatrix.Location = new Point(9, 47);
+            dataGridViewInMatrix.Name = "dataGridViewInMatrix";
+            dataGridViewInMatrix.Size = new Size(654, 299);
+            dataGridViewInMatrix.TabIndex = 2;
             // 
             // textBox2
             // 
@@ -190,6 +199,14 @@
             panel3.Size = new Size(690, 366);
             panel3.TabIndex = 2;
             // 
+            // dataGridViewOutMatrix
+            // 
+            dataGridViewOutMatrix.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewOutMatrix.Location = new Point(3, 47);
+            dataGridViewOutMatrix.Name = "dataGridViewOutMatrix";
+            dataGridViewOutMatrix.Size = new Size(684, 299);
+            dataGridViewOutMatrix.TabIndex = 1;
+            // 
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -203,22 +220,6 @@
             // openFileDialogTask
             // 
             openFileDialogTask.FileName = "openFileDialog1";
-            // 
-            // dataGridViewInMatrix
-            // 
-            dataGridViewInMatrix.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewInMatrix.Location = new Point(9, 47);
-            dataGridViewInMatrix.Name = "dataGridViewInMatrix";
-            dataGridViewInMatrix.Size = new Size(654, 299);
-            dataGridViewInMatrix.TabIndex = 2;
-            // 
-            // dataGridViewOutMatrix
-            // 
-            dataGridViewOutMatrix.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewOutMatrix.Location = new Point(3, 47);
-            dataGridViewOutMatrix.Name = "dataGridViewOutMatrix";
-            dataGridViewOutMatrix.Size = new Size(684, 299);
-            dataGridViewOutMatrix.TabIndex = 1;
             // 
             // FormMain
             // 
@@ -237,9 +238,9 @@
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewInMatrix).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewInMatrix).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOutMatrix).EndInit();
             ResumeLayout(false);
         }

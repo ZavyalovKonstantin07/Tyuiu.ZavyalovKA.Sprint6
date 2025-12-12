@@ -28,16 +28,17 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task7.V1
             fileData = fileData.Replace('\n', '\r');
             string[] lines = fileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
-            int rows = lines.Length;
-            int columns = lines[0].Split(';').Length;
+            rows = lines.Length;
+            columns = lines[0].Split(';').Length;
 
             int[,] arrayValues = new int[rows, columns];
-            for (int r = 0; r < rows; r++)
+
+            for (int i = 0; i < rows; i++)
             {
-                string[] line_r = lines[r].Split(';');
-                for (int c = 0; c < columns; c++)
+                string[] line_r = lines[i].Split(';');
+                for (int j = 0; j < columns; j++)
                 {
-                    arrayValues[r, c] = Convert.ToInt32(line_r[c]);
+                    arrayValues[i, j] = Convert.ToInt32(line_r[j]);
                 }
             }
             return arrayValues;
@@ -70,27 +71,34 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task7.V1
                 dataGridViewOutMatrix.Columns[i].Width = 25;
             }
 
-            for (int r = 0; r < rows; r++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int c = 0; c < columns; c++)
+                for (int j = 0; j < columns; j++)
                 {
-                    dataGridViewInMatrix.Rows[r].Cells[c].Value = arrayValues[r, c];
+                    dataGridViewInMatrix.Rows[i].Cells[j].Value = arrayValues[i, j];
                 }
             }
 
             buttonDone.Enabled = true;
         }
+        private void buttonInfo_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
 
         private void buttonDone_Click(object sender, EventArgs e)
         {
-            int[,] arrayValues = new int[rows, columns];
-            arrayValues = ds.GetMatrix(openFilePath);
-
-            for (int r = 0; r < rows; r++)
+            int[,] arrayValues = ds.GetMatrix(openFilePath);
+            int Rows = arrayValues.GetLength(0);
+            int Columns = arrayValues.GetLength(1);
+            dataGridViewOutMatrix.ColumnCount = Columns;
+            dataGridViewOutMatrix.RowCount = Rows;
+            for (int i = 0; i < Rows; i++)
             {
-                for (int c = 0; c < columns; c++)
+                for (int j = 0; j < Columns; j++)
                 {
-                    dataGridViewOutMatrix.Rows[r].Cells[c].Value = arrayValues[r, c];
+                    dataGridViewOutMatrix.Rows[i].Cells[j].Value = arrayValues[i, j];
                 }
             }
 
@@ -112,13 +120,7 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task7.V1
             string path = saveFileDialogMatrix.FileName;
 
             FileInfo fileInfo = new FileInfo(path);
-            bool fileExists = fileInfo.Exists;
-
-            if (fileExists)
-            {
-                File.Delete(path);
-            }
-
+            if (fileInfo.Exists) { File.Delete(path); }
             int rows = dataGridViewOutMatrix.RowCount;
             int columns = dataGridViewOutMatrix.ColumnCount;
 
@@ -129,11 +131,11 @@ namespace Tyuiu.ZavyalovKA.Sprint6.Task7.V1
                 {
                     if (j != columns - 1)
                     {
-                        str = str + dataGridViewOutMatrix.Rows[i].Cells[j].Value + ";";
+                        str += dataGridViewOutMatrix.Rows[i].Cells[j].Value + ";";
                     }
                     else
                     {
-                        str = str + dataGridViewOutMatrix.Rows[i].Cells[j].Value;
+                        str += dataGridViewOutMatrix.Rows[i].Cells[j].Value;
                     }
                 }
 

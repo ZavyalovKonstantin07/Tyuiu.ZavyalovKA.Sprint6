@@ -38,7 +38,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 29);
+            pictureBox1.Location = new Point(12, 43);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(160, 156);
             pictureBox1.TabIndex = 0;
@@ -46,20 +46,20 @@
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox1.Location = new Point(201, 29);
+            textBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            textBox1.Location = new Point(192, 12);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(310, 131);
+            textBox1.Size = new Size(310, 206);
             textBox1.TabIndex = 1;
-            textBox1.Text = "Разработчик: Завьялов К. А. \r\n\r\nГруппа РППБ-25-1";
+            textBox1.Text = "Разработчик: Завьялов К.А\r\nГруппа РПП6-25-1\r\n\r\nПрограмма разработана в рамках изучения языка C#\r\n\r\nТюменский индустриальный университет (с) 2025\r\nВысшая школа цифровых технологий (с) 2025\r\n\r\n";
             // 
             // buttonInfo
             // 
-            buttonInfo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonInfo.Location = new Point(407, 218);
+            buttonInfo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonInfo.Location = new Point(448, 241);
             buttonInfo.Name = "buttonInfo";
-            buttonInfo.Size = new Size(88, 47);
+            buttonInfo.Size = new Size(63, 33);
             buttonInfo.TabIndex = 2;
             buttonInfo.Text = "OK";
             buttonInfo.UseVisualStyleBackColor = true;
